@@ -83,3 +83,4 @@ def tailRecursion(num, product=1):
     return tailRecursion(num - 1, num * product)
 
 print tailRecursion(5)
+print tailRecursion(0)
