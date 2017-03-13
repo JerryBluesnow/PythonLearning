@@ -18,7 +18,7 @@ print "current local time is :", localtime
 
 import calendar
 cal = calendar.month(2017, 3)
-print cal
+print cal   
 
 
 def powerpower(x, y=2):
@@ -74,3 +74,12 @@ def person(name, age, **keyword):
     print 'name', name.ljust(10), 'age', age, 'other', keyword
 
 person('HengHeng', 1.6, city='Beijing', addr='Chaoyang', zipcode=123456)
+
+# tail recursion
+def tailRecursion(num, product=1):
+    print 'num:', num, 'prodcut:', product
+    if num == 1:
+        return product
+    return tailRecursion(num - 1, num * product)
+
+print tailRecursion(5)
