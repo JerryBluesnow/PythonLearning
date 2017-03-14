@@ -1,13 +1,16 @@
 import urllib2
+import socket
+socket.setdefaulttimeout(10) # 10 seconds later timeout
+urllib2.socket.setdefaulttimeout(10) # 10 seconds later timeout
 
 r = urllib2.Request("http://classweb.loxa.com.tw/dino123/air/P1000775.jpg")
 
 try:
-    # print 111111111111111111
-    #f = urllib2.urlopen(r, data=None, timeout=3)
-    # print 2222222222222222
-    # result =  f.read()
-    print 333333333333333333
+    print 111111111111111111
+    f = urllib2.urlopen(r)
+    print 2222222222222222
+    result =  f.read()
+    print result
 except Exception, e:
     print "444444444444444444---------" + str(e)
 
