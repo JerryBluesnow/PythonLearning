@@ -83,3 +83,26 @@ def tailRecursion(num, product=1):
     return tailRecursion(num - 1, num * product)
 
 print tailRecursion(5)
+#Git fetch origin master
+#git log -p master..origin/master
+#git merge origin/master
+#
+
+d = {'a': 1, 'b': 2, 'c': 3}
+for key in d:
+    print key
+    print d[key]
+for value in d.values():
+    print value
+
+from collections import Iterable
+
+print isinstance('abc', Iterable)
+print isinstance([1,2,3], Iterable)
+print isinstance(123, Iterable)
+
+for i, value in enumerate(['A', 'B', 'C']):
+    print i, value
+
+for x, y in [(1, 1), (2, 4), (3, 9)]:
+    print x, y
