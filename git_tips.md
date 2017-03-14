@@ -7,3 +7,8 @@ git merge origin/master
 git pull origin master
 
 #
+
+    git add filename filename2 file...
+    git commit file1 -m "tips"
+    git commit -m "tips for all"
+    git push origin master
