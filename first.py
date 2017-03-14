@@ -83,7 +83,7 @@ def tailRecursion(num, product=1):
     return tailRecursion(num - 1, num * product)
 
 print tailRecursion(5)
-<<<<<<< HEAD
+
 #Git fetch origin master
 #git log -p master..origin/master
 #git merge origin/master
@@ -107,7 +107,7 @@ for i, value in enumerate(['A', 'B', 'C']):
 
 for x, y in [(1, 1), (2, 4), (3, 9)]:
     print x, y
-=======
+
 #print tailRecursion(0)
 
 
@@ -131,4 +131,3 @@ print range(0, -5, -2)
 print range(-5)
 print range(0)
 print range(1)
->>>>>>> c65375dc6f03bb3ced2dd8316525a372a890c957
