@@ -83,4 +83,26 @@ def tailRecursion(num, product=1):
     return tailRecursion(num - 1, num * product)
 
 print tailRecursion(5)
-print tailRecursion(0)
+#print tailRecursion(0)
+
+
+# advantaged feature
+L = []
+n = 1
+while n <= 99:
+    L.append(n)
+    n = n + 2
+
+print L
+
+#print the front half of the List 
+print 9/2.0
+print 9//2.0
+for x in range(0, len(L)//2, -1):
+    print L[x]
+
+print range(0, 5)
+print range(0, -5, -2)
+print range(-5)
+print range(0)
+print range(1)
