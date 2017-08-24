@@ -12,3 +12,6 @@ git pull origin master
     git commit file1 -m "tips"
     git commit -m "tips for all"
     git push origin master
+
+# get a new project from github
+    git clone https://github.com/JerryBluesnow/PythonLearning.git
