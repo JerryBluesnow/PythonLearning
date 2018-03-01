@@ -16,12 +16,29 @@
 
 # [游戏外挂编程之神器CE的使用 ](http://www.cnblogs.com/egojit/archive/2013/06/14/3135147.html)
 
+# [游戏外挂编程三之游戏进程钩子](https://www.cnblogs.com/egojit/archive/2013/06/16/3138266.html)
+
 # [HOOK钩子的概念](https://jingyan.baidu.com/article/e75aca855afa03142fdac643.html)
 
 # [HOOK钩子教程](http://blog.sina.com.cn/s/blog_651cccf70100tkv6.html)
 
 # [多线程防关,防杀,防删除自身保护程序编写思路](https://www.2cto.com/kf/201002/44758.html)
 
+# [如何让你的程序避开全局键盘钩子的监视](http://blog.okbase.net/BlueSky/archive/3839.html)
+
+# [[CSDN]API HOOK 全局钩子， 防止进程被杀](http://download.csdn.net/download/lygf666/4164019)
+# [XueTr这个牛B工具的进程钩子检测如何实现？？](https://bbs.pediy.com/thread-163373.htm)
+# [[知乎]Win10下用SetWindowsHookEx设置钩子后部分进程假死？](https://www.zhihu.com/question/64221483)
+# [SetWindowsHookEx为某个进程安装钩子](http://blog.csdn.net/hczhiyue/article/details/18449455)
+# [HOOK API（四）—— 进程防终止](https://www.cnblogs.com/fanling999/p/4601118.html)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
+# [GOON](http)
 # [GOON](http)
 
 
