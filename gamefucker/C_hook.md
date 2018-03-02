@@ -31,7 +31,7 @@
 # [[知乎]Win10下用SetWindowsHookEx设置钩子后部分进程假死？](https://www.zhihu.com/question/64221483)
 # [SetWindowsHookEx为某个进程安装钩子](http://blog.csdn.net/hczhiyue/article/details/18449455)
 # [HOOK API（四）—— 进程防终止](https://www.cnblogs.com/fanling999/p/4601118.html)
-# [GOON](http)
+# [PChunter里边有个扫描指定进程中所有钩子的功能，原理是什么？](https://bbs.pediy.com/thread-210688.htm)
 # [GOON](http)
 # [GOON](http)
 # [GOON](http)
@@ -46,6 +46,7 @@
 ## 驱动级注入
     教程:1、打开驱动级别的dll注入器.exe 2、加载驱动 填写要操作的进程名  填写要注入  dll的路径   3 点设置完毕  注意不要关掉
     可以打开要注入的进程测试一下，可注入大部分有保护的游戏
+## 游戏应用层钩子
 ## 游戏应用层钩子
     1. 直接加载驱动的办法过掉钩子，不需要什么XT 
     2. 代码直接注入到游戏进程
