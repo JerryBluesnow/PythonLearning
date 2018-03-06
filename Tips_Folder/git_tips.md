@@ -31,6 +31,17 @@
     git commit -m "remove file_name"
     git push origin master
 
+## 多个账号同时使用时，要需要设置的全局用户名和用户邮箱，在每个repo目录下单独设置
+### 取消全局设置
+    git config --global --unset user.name   //取消全局设置
+    git config --global --unset user.email  //取消全局设置
+
+### 单独设置
+    git config user.name "newname"
+    git config user.email "newemail"
+
 ## check out 单个文件
     git checkout -- reademe.txt
 ### [撤销修改也可以checkout，也可以reset HEAD](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374831943254ee90db11b13d4ba9a73b9047f4fb968d000)
+
+## [github/gerrit 管理多个ssh key](http://blog.csdn.net/system1024/article/details/52044900)
