@@ -68,3 +68,6 @@
 ## [github/gerrit 管理多个ssh key](http://blog.csdn.net/system1024/article/details/52044900)
 
 ## git tips for work
+
+# .gitignore忽略，过滤
+ [Git忽略规则.gitignore梳理](https://www.cnblogs.com/kevingrace/p/5690241.html)
