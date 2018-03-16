@@ -42,6 +42,29 @@
 
 ## check out 单个文件
     git checkout -- reademe.txt
+## 更新单个文件
+    $ git fetch
+    remote: Counting objects: 8, done.
+    remote: Compressing objects: 100% (3/3), done.
+    remote: Total 8 (delta 3), reused 8 (delta 3), pack-reused 0
+    Unpacking objects: 100% (8/8), done.
+    From github.com:fffy2366/checkout
+       cd1768d..2408ca5  master     -> origin/master
+
+    $ git checkout -m 2408ca5 1.php 2.php
+## 更新单个目录
+    $ git fetch
+
+    remote: Counting objects: 8, done.
+    remote: Compressing objects: 100% (3/3), done.
+    remote: Total 8 (delta 3), reused 8 (delta 3), pack-reused 0
+    Unpacking objects: 100% (8/8), done.
+    From github.com:fffy2366/checkout
+       cd1768d..2408ca5  master     -> origin/master
+
+    $ git checkout -m 2408ca5 test1
 ### [撤销修改也可以checkout，也可以reset HEAD](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374831943254ee90db11b13d4ba9a73b9047f4fb968d000)
 
 ## [github/gerrit 管理多个ssh key](http://blog.csdn.net/system1024/article/details/52044900)
+
+## git tips for work
