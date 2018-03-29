@@ -71,3 +71,13 @@
 
 # .gitignore忽略，过滤
  [Git忽略规则.gitignore梳理](https://www.cnblogs.com/kevingrace/p/5690241.html)
+
+ [git 已提交文件的 如何屏蔽git的track](http://blog.csdn.net/n517052183/article/details/45028293)
+ 正确的做法应该是：git rm --cached logs/xx.log，
+ 然后更新 .gitignore 忽略掉目标文件，
+ 最后 git commit -m "We really don't want Git to track this anymore!"
+
+ # git rebase --continue / --skip
+ 
+git rebase --abort 是无风险的操作，会回到rebase操作之前的状态，2个分支的commits毫发无损。
+git rebase --skip 是高风险的操作，引起冲突的commits会被丢弃（这部分代码修改会丢失）
