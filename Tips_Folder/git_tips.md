@@ -21,7 +21,7 @@
    or [git设置用户/密码](http://blog.csdn.net/qq_28602957/article/details/52154384)
 ### git config查看配置 
     git config --list
-
+    http.proxy=http://135.245.48.34:8000
 ## git删除文件
     local operation steps:
     rm file_name

@@ -60,3 +60,49 @@ http://www.python.org/ftp/python/2.7.6/python-2.7.6.msi
     >>> import os
     >>> os.path.join('/hello/','good/boy/','doiido')
     '/hello/good/boy/doiido'
+
+## 如果当前电脑里所有的python程序访问网页或者服务器的时候都需要用到代理可以去python库的源文件修改代理，这样所有用到该源文件访问
+    例如我在使用tushare访问数据的时候，实际上默认程序是不走代理的，虽然系统中配置了代理，依然不起任何作用，这个时候发现tushare在访问网页/服务器的时候，
+    最终调用的是urlib2.py， 而平时在自己写脚本的时候在脚本中使用build一个新的ProxyHandler就可以了，如下：
+    # -*- coding: utf-8 -*-
+    import urllib
+    import urllib2
+    import gzip, StringIO
+    import zlib
+    
+    '''
+    proxy_handler = urllib2.ProxyHandler({'http': '135.245.48.34:8000'})
+    opener = urllib2.build_opener(proxy_handler)
+    r = opener.open('http://finance.sina.com.cn/realstock/company/sz300033/nc.shtml')
+    print(r.read())
+    '''
+    
+    request = urllib2.Request('http://www.163.com')
+    request.add_header('Accept-encoding', 'gzip')
+    
+    proxy_handler = urllib2.ProxyHandler({'http': '135.245.48.34:8000'})
+    opener = urllib2.build_opener(proxy_handler)
+    
+    response = opener.open(request)
+    html = response.read()
+    
+    gzipped = response.headers.get('Content-Encoding')
+    if gzipped:
+        html = StringIO.StringIO(html)
+        #html = zlib.decompress(html, 16 + zlib.MAX_WBITS)
+        gzipper = gzip.GzipFile(fileobj=html)
+        html = gzipper.read()
+    else:
+        typeEncode = sys.getfilesystemencoding()##系统默认编码
+        infoencode = chardet.detect(html).get('encoding','utf-8')##通过第3方模块来自动提取网页的编码
+        html = content.decode(infoencode,'ignore').encode(typeEncode)##先转换成unicode编码，然后转换系统编码输出
+    
+    print html
+    
+    但是在大量应用中很难做到直接去修改所有的库去build proxyhandler， 所以我们可以采用修改基础库urllib2中的ProxyHandler __init__的constext默认参数设置代理
+    class ProxyHandler(BaseHandler):
+    ...
+    def __init__(self, proxies=None):   
+    ----> 
+    def __init__(self, proxies={'http': 'xxx.xxx.xxx.xxx:xx'}):    
+    其中xxx.xxx.xxx.xxx:xx具体的代理，在浏览器的代理中可以查到.

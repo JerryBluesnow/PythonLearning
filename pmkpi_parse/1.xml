@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="MeasDataCollection.xsl"?>
+<measCollecFile
+	xmlns="http://www.3gpp.org/ftp/specs/latest/rel-5/32_series/32401-540.zip#measCollec">
+	<fileHeader fileFormatVersion="32.401 V5.0"
+		vendorName="Nokia"
+		dnPrefix="">
+		<fileSender
+			localDn=""
+			elementType="" />
+		<measCollec beginTime="2018-10-08T10:40:00+08:00" />
+	</fileHeader>
+	<measData>
+		<managedElement
+			localDn=""
+			userLabel=""
+			swVersion="R37.04.00" />
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">ACREventTimeoutRate</measType>
+			<measType p="2">VS.SPDFACREventSent</measType>
+			<measType p="3">VS.PCSCFACREventSent</measType>
+			<measType p="4">VS.SCSCFACREventSent</measType>
+			<measType p="5">VS.ICSCFACREventSent</measType>
+			<measType p="6">VS.BGCFACREventSent</measType>
+			<measType p="7">VS.IBCFACREventSent</measType>
+			<measType p="8">VS.ECSCFACREventSent</measType>
+			<measType p="9">VS.SPDFACREventSent</measType>
+			<measType p="10">VS.PCSCFACAEventTimeout</measType>
+			<measType p="11">VS.SCSCFACAEventTimeout</measType>
+			<measType p="12">VS.ICSCFACAEventTimeout</measType>
+			<measType p="13">VS.BGCFACAEventTimeout</measType>
+			<measType p="14">VS.IBCFACAEventTimeout</measType>
+			<measType p="15">VS.ECSCFACAEventTimeout</measType>
+			<measType p="16">VS.SPDFACAEventSuccRecd</measType>
+			<measType p="17">VS.SPDFACAEventFailRecd</measType>
+			<measValue measObjLdn="PoolType=ims">
+				<r p="1">0.00</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+				<r p="10">0</r>
+				<r p="11">0</r>
+				<r p="12">0</r>
+				<r p="13">0</r>
+				<r p="14">0</r>
+				<r p="15">0</r>
+				<r p="16">0</r>
+				<r p="17">0</r>
+			</measValue>
+		</measInfo>
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">ACRStopTimeoutRate</measType>
+			<measType p="2">VS.PCSCFACRStopSent</measType>
+			<measType p="3">VS.SCSCFACRStopSent</measType>
+			<measType p="4">VS.ECSCFACRStopSent</measType>
+			<measType p="5">VS.IBCFACRStopSent</measType>
+			<measType p="6">VS.PCSCFACAStopTimeout</measType>
+			<measType p="7">VS.SCSCFACAStopTimeout</measType>
+			<measType p="8">VS.ECSCFACAStopTimeout</measType>
+			<measType p="9">VS.IBCFACAStopTimeout</measType>
+			<measValue measObjLdn="PoolType=ims">
+				<r p="1">0.00</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+			</measValue>
+		</measInfo>
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">ACRInterimTimeoutRate</measType>
+			<measType p="2">VS.PCSCFACRInterimSent</measType>
+			<measType p="3">VS.SCSCFACRInterimSent</measType>
+			<measType p="4">VS.PCSCFACRInterimTimerExpSent</measType>
+			<measType p="5">VS.SCSCFACRInterimTimerExpSent</measType>
+			<measType p="6">VS.IBCFACRInterimSent</measType>
+			<measType p="7">VS.IBCFACRInterimTimerExpSent</measType>
+			<measType p="8">VS.PCSCFACAInterimTimeout</measType>
+			<measType p="9">VS.SCSCFACAInterimTimeout</measType>
+			<measType p="10">VS.IBCFACAInterimTimeout</measType>
+			<measValue measObjLdn="PoolType=ims">
+				<r p="1">0.00</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+				<r p="10">0</r>
+			</measValue>
+		</measInfo>
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">ACRStartTimeoutRate</measType>
+			<measType p="2">VS.PCSCFACRStartSent</measType>
+			<measType p="3">VS.SCSCFACRStartSent</measType>
+			<measType p="4">VS.ECSCFACRStartSent</measType>
+			<measType p="5">VS.IBCFACRStartSent</measType>
+			<measType p="6">VS.PCSCFACAStartTimeout</measType>
+			<measType p="7">VS.SCSCFACAStartTimeout</measType>
+			<measType p="8">VS.ECSCFACAStartTimeout</measType>
+			<measType p="9">VS.IBCFACAStartTimeout</measType>
+			<measValue measObjLdn="PoolType=ims">
+				<r p="1">0.00</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+			</measValue>
+		</measInfo>
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">IBCFINVSuccRate</measType>
+			<measType p="2">VS.IBCFSIPINVReqRec</measType>
+			<measType p="3">VS.IBCF407SIPINVCHALLRespRec</measType>
+			<measType p="4">VS.IBCFSucc2xxINVRespRec</measType>
+			<measValue measObjLdn="PoolType=ims, Component=ibcf-stdn">
+				<r p="1">100.00</r>
+				<r p="2">20</r>
+				<r p="3">0</r>
+				<r p="4">20</r>
+			</measValue>
+		</measInfo>
+		<measInfo>
+			<granPeriod duration="PT300S" endTime="2018-10-08T10:45:00+08:00" />
+			<measType p="1">VS.IncSessLimitRejSess</measType>
+			<measType p="2">VS.OutSessLimitRejSess</measType>
+			<measType p="3">VS.IncConcurSessCur</measType>
+			<measType p="4">VS.OutConcurSessCur</measType>
+			<measType p="5">VS.IncConcurBWCur</measType>
+			<measType p="6">VS.OutConcurBWCur</measType>
+			<measType p="7">VS.TotalConcurAudioBWCur</measType>
+			<measType p="8">VS.TotalConcurVideoBWCur</measType>
+			<measType p="9">VS.IncBWLimitRejMsg</measType>
+			<measType p="10">VS.OutBWLimitRejMsg</measType>
+			<measType p="11">VS.OutRejRerouted</measType>
+			<measType p="12">VS.IBCFIngressSIPINVRecTG</measType>
+			<measType p="13">VS.IBCFSucc2xxIngressSIPINVRespRecTG</measType>
+			<measType p="14">VS.IBCFEgressSIPINVSentTG</measType>
+			<measType p="15">VS.IBCFSucc2xxEgressSIPINVRespRecTG</measType>
+			<measType p="16">VS.IBCFSeizeTrafUsageIngressTG</measType>
+			<measType p="17">VS.IBCFSeizeTrafUsageEgressTG</measType>
+			<measType p="18">VS.IBCFAnsTrafUsageIngressTG</measType>
+			<measType p="19">VS.IBCFAnsTrafUsageEgressTG</measType>
+			<measType p="20">VS.IncConcurBWPeak</measType>
+			<measType p="21">VS.OutConcurBWPeak</measType>
+			<measValue measObjLdn="PoolType=ims, Component=ibcf-stdn, vnId=1, tgId=1">
+				<r p="1">0</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+				<r p="10">0</r>
+				<r p="11">0</r>
+				<r p="12">20</r>
+				<r p="13">20</r>
+				<r p="14">0</r>
+				<r p="15">0</r>
+				<r p="16">120</r>
+				<r p="17">0</r>
+				<r p="18">120</r>
+				<r p="19">0</r>
+				<r p="20">0</r>
+				<r p="21">0</r>
+			</measValue>
+			<measValue measObjLdn="PoolType=ims, Component=ibcf-stdn, vnId=2, tgId=1">
+				<r p="1">0</r>
+				<r p="2">0</r>
+				<r p="3">0</r>
+				<r p="4">0</r>
+				<r p="5">0</r>
+				<r p="6">0</r>
+				<r p="7">0</r>
+				<r p="8">0</r>
+				<r p="9">0</r>
+				<r p="10">0</r>
+				<r p="11">0</r>
+				<r p="12">0</r>
+				<r p="13">0</r>
+				<r p="14">20</r>
+				<r p="15">20</r>
+				<r p="16">0</r>
+				<r p="17">120</r>
+				<r p="18">0</r>
+				<r p="19">120</r>
+				<r p="20">0</r>
+				<r p="21">0</r>
+			</measValue>
+		</measInfo>
+	</measData>
+	<fileFooter>
+		<measCollec endTime="2018-10-08T10:45:00+08:00" />
+	</fileFooter>
+</measCollecFile>
