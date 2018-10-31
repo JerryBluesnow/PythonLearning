@@ -4,17 +4,10 @@ import urllib2
 import gzip, StringIO
 import zlib
 
-'''
-proxy_handler = urllib2.ProxyHandler({'http': '135.245.48.34:8000'})
-opener = urllib2.build_opener(proxy_handler)
-r = opener.open('http://www.google.cn')
-print(r.read())
-'''
-
 request = urllib2.Request('http://www.google.cn')
 request.add_header('Accept-encoding', 'gzip')
 
-proxy_handler = urllib2.ProxyHandler({'http': '135.245.48.34:8000'})
+proxy_handler = urllib2.ProxyHandler({'http': 'xxx.xxx.xxx.xxx:xxxx'})
 opener = urllib2.build_opener(proxy_handler)
 
 response = opener.open(request)
