@@ -6,6 +6,7 @@ import tushare as ts
 import sys
 import pandas as pd
 import time
+import datetime
 
 def printChinese(chinese_str):
     type = sys.getfilesystemencoding()
@@ -29,9 +30,10 @@ def get_all_price(code_list):
                 df.loc[index,'low'], 
                 df.loc[index,'time'], 
                 format( float(df.loc[index,'price']) * 100 / float(df.loc[index,'pre_close']) - 100, '.2f')]], 
-            columns = list(['code', 'pre_close', 'open', 'price', 'high', 'low', 'rate', 'time']) ,
+            columns = list(['code', 'pre_close', 'open', 'price', 'high', 'low', 'time', 'rate']) ,
             index=[index]))
 
+    print datetime.datetime.now()
     print final_df
 
 if __name__ == '__main__':
@@ -41,5 +43,5 @@ if __name__ == '__main__':
  
     while True:
         get_all_price(STOCK)
-        print "wait for 60 seconds..."
+        print "==========================================================================="
         time.sleep(60)
