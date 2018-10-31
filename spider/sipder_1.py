@@ -14,7 +14,8 @@ print(r.read())
 request = urllib2.Request('http://www.163.com')
 request.add_header('Accept-encoding', 'gzip')
 
-proxy_handler = urllib2.ProxyHandler({'http': '135.245.48.34:8000'})
+# remember to update the proxy 
+proxy_handler = urllib2.ProxyHandler({'http': 'xxx.xxx.xxx.xxx:xxxx'})
 opener = urllib2.build_opener(proxy_handler)
 
 response = opener.open(request)
