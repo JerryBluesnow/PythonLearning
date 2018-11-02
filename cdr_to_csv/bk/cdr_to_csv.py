@@ -1,6 +1,19 @@
 #!/usr/bin/python
 #-*- coding: utf-8 -*-
- 
+#-------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------------#
+# version 1.1 add INGRESS_ERLANGS/EGRESS_ERLANGS to replace INGRESS_DURATION/EGRESS_DURATION
+#-------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------------#
+#-------------------------------------------------------------------------------------------#
+
+'''
+Usage:
+    python cdr_to_csv.py -d 2018/10/10 -s 14:00:00 -e 14:59:59 -p /storage/ccfl_app/charging/stream1/primary
+Tips:
+    default filename format:
+    CCFL0_-_133.20181011_-_1651+0530.decoded
+'''
 import sys
 import time
 import datetime
@@ -19,6 +32,7 @@ serviceDeliveryEndTimeStamp = "serviceDeliveryEndTimeStamp"
 trunkGroupID = "trunkGroupID"
 trunkGroupIDincoming = "incoming"
 trunkGroupIDoutgoing = "outgoing"
+PER_ERLANG_INTERVAL = 3600
 
 RecordHeaderINDEX                       = 0
 IBCFRecordINDEX                         = 1
@@ -191,20 +205,83 @@ def calculateCallRecordDuriationSum(durationRecordList):
                 tmp[3] = tmp[3] + listitem[3]
             else:
                 resultDict[key] = listitem
+    for key in resultDict.keys():
+        tmp = resultDict[key]
+        tmp[2] = format(float(tmp[2]) / PER_ERLANG_INTERVAL, '.2f')
+        tmp[3] = format(float(tmp[3]) / PER_ERLANG_INTERVAL, '.2f')
+
     durationSumRecordList=[]
     for item in resultDict.values():
         durationSumRecordList.append(item)
     return durationSumRecordList
 
-def saveDurtationInfoToCSV(durationRecordList, outputCSVfile):
+def saveTileInforamtionRowToList(informationRowList, hostname, starttime, endtime, erlang_duration):
+    first_row = []
+    first_row.append('sbchostname')
+    first_row.append('Starttime')
+    first_row.append('Endtime')
+    informationRowList.append(first_row)
+
+    second_row = []
+    second_row.append(hostname)
+    second_row.append(starttime)
+    second_row.append(endtime)
+    informationRowList.append(second_row)
+    
+    if erlang_duration == 'DURATION':
+        informationRowList.append(['VN_ID','TG_ID','INCOMING_DURATION','OUTGOING_DURATION'])
+    elif erlang_duration == 'ERLANG':
+        informationRowList.append(['VN_ID','TG_ID','INGRESS_ERLANGS','EGRESS_ERLANGS'])
+
+    return
+
+def saveDurtationInfoToCSV(InformationRowList, durationRecordList, outputCSVfile):
     ''' used to save per CDR call duration result to CSV '''
+    ''' qa25b_20181011_000000-20181011_235959.raw.csv '''
+    '''
+    Final csv file format:
+    sbchostname,Starttime,Endtime
+    qa25b,20181011_000000,20181011_235959
+    VN_ID,TG_ID,INCOMING_DURATION,OUTGOING_DURATION
+    2,2,0.01,0.00
+    1,1,0.00,0.01
+    '''
     with open(outputCSVfile,"ab+") as csvfile: 
         csvfile.write(codecs.BOM_UTF8)  
         writer = csv.writer(csvfile) 
-        writer.writerow(['VN_ID','TG_ID','INCOMING_DURATION','OUTGOING_DURATION'])
+        writer.writerows(InformationRowList)   
+        writer.writerows(durationRecordList)   
+
+def saveErlangToCSV(InformationRowList, durationRecordList, outputCSVfile):
+    ''' used to save per CDR call duration result to CSV '''
+    ''' qa25b_20181011_000000-20181011_235959.csv '''
+    '''
+    Final csv file format:
+    sbchostname,Starttime,Endtime
+    qa25b,20181011_000000,20181011_235959
+    VN_ID,TG_ID,INGRESS_ERLANGS,EGRESS_ERLANGS
+    2,2,0.01,0.00
+    1,1,0.00,0.01
+    '''
+    with open(outputCSVfile,"ab+") as csvfile: 
+        csvfile.write(codecs.BOM_UTF8)  
+        writer = csv.writer(csvfile) 
+        #writer.writerow(['VN_ID','TG_ID','INGRESS_ERLANGS','EGRESS_ERLANGS'])
+        writer.writerows(InformationRowList)   
         writer.writerows(durationRecordList)   
 
 def decodeRecord(RecordItem):
+    '''
+    RecordItem is the decoded object for one CDR,
+    it is in List format, from below indexs, associating information can be extracted.
+    RecordHeaderINDEX                       = 0
+    IBCFRecordINDEX                         = 1
+    serviceDeliveryStartTimeStampINDEX      = 2
+    serviceDeliveryEndTimeStampINDEX        = 3
+    trunkGroupIDINDEX                       = 4
+    trunkGroupIDincomingINDEX               = 5
+    trunkGroupIDoutgoingINDEX               = 6
+    '''
     if len(RecordItem) != RECORD_LIST_LENGTH:
         return [],[]
 
@@ -339,7 +416,15 @@ def translateFileNametoTimeString(filename):
     return datetime_toString(CDRFileFormatString_toDatetime(filename))
 
 def checkFileInTimeRange(starttime, endtime, inputfilename):
-    ''''''
+    '''
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1801+0530.decoded')   # 0 - in range
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1811+0530.decoded')   # 1
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1859+0530.decoded')
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1900+0530.decoded')
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1759+0530.decoded')
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180817_-_1801+0530.decoded')   # out of range
+    checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180815_-_1801+0530.decoded')   # out of range
+    '''
     starttimeDatetime = string_toDatetime(starttime)
     endtimeDatetime = string_toDatetime(endtime)
     fileDatetime = CDRFileFormatString_toDatetime(inputfilename)
@@ -418,25 +503,10 @@ def main():
     else:
         print "create the folder", cdr_decoded_directory
         os.system('mkdir ' + cdr_decoded_directory)
-    #resultRecordList = loadCDRdecodedFile(sys.argv[1])
-    #printRecordList(resultRecordList)
-    #durationOverAllList = []
-    #retvalue = decodeRecordList(resultRecordList, durationOverAllList)
-    #saveDurtationInfoToCSV(durationOverAllList, "Hello.csv")
-    #os.system('dir *')
-    #dt = translateFileNametoTimeString('mum01-4_-_24.20180816_-_1801+0530.decoded')
-    #print dt
+
+    # starttime/endtime in format "2018/10/10 18:59:00"
     starttime = options.day + ' ' + options.starttimestamp
     endtime = options.day + ' ' + options.endtimestamp
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1801+0530.decoded')   # 0 - in range
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1811+0530.decoded')   # 1
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1859+0530.decoded')
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1900+0530.decoded')
-   # checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180816_-_1759+0530.decoded')
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180817_-_1801+0530.decoded')   # out of range
-    #checkFileInTimeRange('2018/08/16 17:59:00','2018/08/16 18:59:00','mum01-4_-_24.20180815_-_1801+0530.decoded')   # out of range
-
-    #filelist = os.system('dir *')
 
     filelist = os.listdir(options.path) 
     durationOverAllList = []
@@ -468,11 +538,44 @@ def main():
             #printRecordList(resultRecordList)
             retvalue = decodeRecordList(resultRecordList, durationOverAllList)
 
-    tosavedFilename = call_duration_stored_directory + '/duration_' + datetime_string_to_filename_string(options.day + ' ' + options.starttimestamp) + '-' + datetime_string_to_filename_string(options.day + ' ' + options.endtimestamp) + '.csv'
-    print "Calculation Result is to be saved in", tosavedFilename
+    # get hostname from server, suppose there is '-' in hostname, just use the part before '-'
+    hostname = os.popen('hostname').readline().split('-')[0]
+    filename_starttime_string = datetime_string_to_filename_string(options.day + ' ' + options.starttimestamp)
+    filename_endtime_string = datetime_string_to_filename_string(options.day + ' ' + options.endtimestamp)
+
+    # make file name in format hostname_20181010_100000-20181010_105959
+    # and will finally append ".csv"
+    tosavedFilename = call_duration_stored_directory \
+        + '/'  \
+        +  hostname \
+        + '_'\
+        + filename_starttime_string \
+        + '-' \
+        + filename_endtime_string
+
+    print "Calculation Result is to be saved in", tosavedFilename + '.csv'
     print "Calculation Result Temp file is to be saved in", tosavedFilename + '.raw.csv'
-    saveDurtationInfoToCSV(durationOverAllList, tosavedFilename + '.raw.csv')
-    saveDurtationInfoToCSV(calculateCallRecordDuriationSum(durationOverAllList), tosavedFilename)
+
+    InformationRowList = []
+    saveTileInforamtionRowToList(InformationRowList, 
+        hostname,
+        filename_starttime_string,
+        filename_endtime_string,
+        'DURATION')
+
+    saveDurtationInfoToCSV(InformationRowList, durationOverAllList, tosavedFilename + '.raw.csv')
+    print tosavedFilename + '.raw.csv','Generating Complete!'
+
+    InformationRowList = []
+    erlangList = calculateCallRecordDuriationSum(durationOverAllList)
+    saveTileInforamtionRowToList(InformationRowList,
+        hostname,
+        filename_starttime_string,
+        filename_endtime_string,
+        'ERLANG')
+
+    saveErlangToCSV(InformationRowList, erlangList, tosavedFilename+'.csv')
+    print tosavedFilename + '.csv','Generating Complete!'
     return 0
 
 if __name__ == "__main__":
