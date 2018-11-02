@@ -81,3 +81,15 @@
  
 git rebase --abort 是无风险的操作，会回到rebase操作之前的状态，2个分支的commits毫发无损。
 git rebase --skip 是高风险的操作，引起冲突的commits会被丢弃（这部分代码修改会丢失）
+
+
+# git rm 如何删除中文文件?
+    例如手动删除一个中文文件后，执行git status，会得到如下信息
+          deleted:    "stock/stock2/stock/\350\202\241\347\245\250\347\273\237\350\256\241.xlsx"
+    其实这是一个中文名的文件，执行git rm  "stock/stock2/stock/\350\202\241\347\245\250\347\273\237\350\256\241.xlsx"
+    会失败，
+    这个时候需要执行如下命令
+    git config --global core.quotepath false
+    然后,执行git status，会得到中文名：
+    deleted:    stock/stock2/stock/股票统计.xlsx
+    之后执行git rm stock/stock2/stock/股票统计.xlsx就可以了
