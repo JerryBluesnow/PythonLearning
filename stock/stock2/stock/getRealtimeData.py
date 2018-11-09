@@ -17,41 +17,17 @@ import threading
 from threading import Event
 import signal
 import os
-'''
-class Watcher():
- 
-    def __init__(self):
-        self.child = os.fork()
-        if self.child == 0:
-            return
-        else:
-            self.watch()
- 
-    def watch(self):
-        try:
-            os.wait()
-        except KeyboardInterrupt:
-            self.kill()
-        sys.exit()
- 
-    def kill(self):
-        try:
-            os.kill(self.child, signal.SIGKILL)
-        except OSError:
-            pass
-'''
-def printChinese(chinese_str):
-    type = sys.getfilesystemencoding()
-    print chinese_str.decode('UTF-8').encode(type)
-    return
+
+import inspect
+import ctypes
+import itertools
 
 def get_all_price(code_list):
     '''process all stock'''
-    print "going to get realtime data @", datetime.datetime.now(), ", be patient..."
+    global final_df
     df = ts.get_realtime_quotes(STOCK)
-    print "get done, @",datetime.datetime.now()
     #print df[['code','price','pre_close','ask','volume','amount','time']]
-    final_df = pd.DataFrame()
+    #final_df = pd.DataFrame()
 
     index = 0
     for index in range(0, len(STOCK)):
@@ -67,58 +43,96 @@ def get_all_price(code_list):
             columns = list(['code', 'pre_close', 'open', 'price', 'high', 'low', 'time', 'rate']) ,
             index=[index]))
 
-    #print datetime.datetime.now()
-    print final_df
+    return final_df
 
-def worker(self_event, event_obj, input_list):
+STOCK = ['600240',      
+         '000711', 
+         '002451',       
+         '000651'] 
+
+class Producer(threading.Thread):
+    def run(self):
+        global is_exit
+        global final_df 
+        #final_df = pd.DataFrame()
+        while True:
+            if cond.acquire():
+                if is_exit: #每次获取锁之后，先检查全局状态变量
+                    cond.notifyAll() #退出前必须唤醒其他所有线程
+                    cond.release() #退出前必须释放锁
+                    break
+                if len(final_df) > 0:
+                    cond.wait()
+                else:
+                    final_df = get_all_price(STOCK)
+                    cond.notify()
+                cond.release()
+
+def wait_loop(interval):
+    second_hand = 0
     while True:
-        self_event.clear()
-        event_obj.wait()
-        get_all_price(input_list)
-        self_event.set()
+        print second_hand,
+        time.sleep(2)
+        second_hand = second_hand + 2
+        if second_hand >= interval: 
+            break
+    print second_hand
 
-def wait_time_signal(seconds):
-    print 'start timer watch with', seconds, 'seconds'
-    for i in range(0, seconds):
-        print '.',
-        time.sleep(1)
-    print '.'
-    print 'stop timer watch...'
+class Consumer(threading.Thread):
+    def run(self):
+        global is_exit
+        global final_df
+        while True:
+            if cond.acquire():
+                if is_exit:
+                    cond.notifyAll()
+                    cond.release()
+                    break
+                if len(final_df) == 0:
+                    cond.wait()
+                else:
+                    print "===============================",datetime.datetime.now(),"========================================="
+                    print final_df
+                    # after print, need to clear the content in the DataFrame final_df
+                    final_df.drop(final_df.index,inplace=True)
+                    wait_loop(REPORT_INTERVAL)  # wait 60 seconds to get data
+                    cond.notify()
+                cond.release()
 
-def process(self_event, event_obj):
-    while True:
-        event_obj.wait()
-        self_event.clear()
-        wait_time_signal(60)
-        self_event.set()
+REPORT_INTERVAL = 60   # wait for one minutes
+cond = threading.Condition()
+is_exit = False #全局变量
 
-def quit(signum, frame):
-    print 'Ctrl+C is pressed to stop the process.'
-    sys.exit()
+def signal_handler(signum, frame): #信号处理函数
+    global is_exit
+    is_exit = True #主线程信号处理函数修改全局变量，提示子线程退出
+    print "Get signal, set is_exit = True"
 
-if __name__ == '__main__':
 
-    STOCK = ['600240',      
-             '002230',           
-             '000651']       
-    
-    try:
-        signal.signal(signal.SIGINT, quit)
-        signal.signal(signal.SIGTERM, quit)
+def test():
+    global final_df 
+    final_df = pd.DataFrame() 
+    producers = []
+    consumers = []
+    for i in xrange(4):
+        p = Producer()
+        producers.append(p)
+        p.setDaemon(True) #子线程daemon
+        p.start()
+    for j in xrange(2):
+        c = Consumer()
+        consumers.append(c)
+        c.setDaemon(True) #子线程daemon
+        c.start()
+    while 1:
+        alive = False
+        for t in itertools.chain(producers, consumers): #循环检查所有子线程
+            alive = alive or t.isAlive() #保证所有子线程退出
+        if not alive:
+            break
 
-        time_event = Event()
-        work_event = Event()
-
-        worker_thread = threading.Thread(target=worker, args=(work_event,time_event, STOCK))
-        process_thread = threading.Thread(target=process, args=(time_event,work_event))
-
-        #worker_thread.setDaemon(True)
-        #process_thread.setDaemon(True)
-        worker_thread.start()
-        process_thread.start()
-
-        print "set signal to start..."
-        time_event.set()
-
-    except Exception, exc:
-        print exc
+            
+if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler) #注册信号处理函数
+    signal.signal(signal.SIGTERM, signal_handler) #注册信号处理函数
+    test()
