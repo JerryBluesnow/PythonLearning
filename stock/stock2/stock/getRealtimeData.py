@@ -45,11 +45,6 @@ def get_all_price(code_list):
 
     return final_df
 
-STOCK = ['600240',      
-         '000711', 
-         '002451',       
-         '000651'] 
-
 class Producer(threading.Thread):
     def run(self):
         global is_exit
@@ -69,12 +64,15 @@ class Producer(threading.Thread):
                 cond.release()
 
 def wait_loop(interval):
+    global is_exit
     second_hand = 0
     while True:
         print second_hand,
         time.sleep(2)
         second_hand = second_hand + 2
         if second_hand >= interval: 
+            break
+        if is_exit == True:
             break
     print second_hand
 
@@ -91,7 +89,7 @@ class Consumer(threading.Thread):
                 if len(final_df) == 0:
                     cond.wait()
                 else:
-                    print "===============================",datetime.datetime.now(),"========================================="
+                    print "=========================",datetime.datetime.now(),"=================================="
                     print final_df
                     # after print, need to clear the content in the DataFrame final_df
                     final_df.drop(final_df.index,inplace=True)
@@ -106,6 +104,7 @@ is_exit = False #全局变量
 def signal_handler(signum, frame): #信号处理函数
     global is_exit
     is_exit = True #主线程信号处理函数修改全局变量，提示子线程退出
+    print "" # make sure below information be printed in a new line
     print "Get signal, set is_exit = True"
 
 
@@ -131,6 +130,13 @@ def test():
         if not alive:
             break
 
+
+STOCK = ['600240',
+         '002617',      
+         '000711', 
+         '002451',
+         '510300',       
+         '000651'] 
             
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, signal_handler) #注册信号处理函数
