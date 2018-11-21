@@ -21,6 +21,7 @@ import os
 import inspect
 import ctypes
 import itertools
+import platform
 
 def get_all_price(code_list):
     '''process all stock'''
@@ -89,7 +90,14 @@ class Consumer(threading.Thread):
                 if len(final_df) == 0:
                     cond.wait()
                 else:
-                    os.system('cls')
+                    sysstr = platform.system()
+                    if(sysstr =="Windows"):
+                        os.system('cls')
+                    elif(sysstr == "Linux"):
+                        os.system('clear')
+                    else:
+                        os.system('clear')
+
                     print "=========================",datetime.datetime.now(),"=================================="
                     print final_df
                     # after print, need to clear the content in the DataFrame final_df
