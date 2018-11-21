@@ -89,6 +89,7 @@ class Consumer(threading.Thread):
                 if len(final_df) == 0:
                     cond.wait()
                 else:
+                    os.system('cls')
                     print "=========================",datetime.datetime.now(),"=================================="
                     print final_df
                     # after print, need to clear the content in the DataFrame final_df
@@ -105,7 +106,7 @@ def signal_handler(signum, frame): #信号处理函数
     global is_exit
     is_exit = True #主线程信号处理函数修改全局变量，提示子线程退出
     print "" # make sure below information be printed in a new line
-    print "Get signal, set is_exit = True"
+    print "Exit from the process...."
 
 
 def test():
@@ -132,6 +133,8 @@ def test():
 
 
 STOCK = ['600240',
+         '300116',
+         '600226',
          '002617',      
          '000711', 
          '002451',
