@@ -27,10 +27,14 @@ if __name__ == "__main__":
     print "Process Complete!......"
     #pyautogui.typewrite("Process Complete!......", 0.25)
 
-    print Application.windows()
-    #app = Application().start("notepad.exe")
+    app = Application(backend="uia").start("notepad.exe")
     #app = Application().connect(class_name="Notepad")
+    dlg_spec = app['Untitled - Notepad']
+    dlg_spec.print_control_identifiers()
+
+    #app.notepad.type_keys("%FX")
 #
+    #about_dlg = app.window_(title_re = u"关于", class_name = "#32770")
     #app['Untitled - Notepad'].Edit.type_keys('test01')
     #app['Untitled - Notepad'].menu_select("File->Save")
 #
