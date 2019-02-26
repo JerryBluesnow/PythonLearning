@@ -59,6 +59,7 @@ if __name__ == '__main__':
     
     #image = pyautogui.screenshot()
     #image.save('testing.png')
+    #pyautogui.screenshot(region=(20, 20, 50, 50))
 
     #sys.exit(0)
 

@@ -61,6 +61,14 @@ if __name__ == "__main__":
 
         DOWN_WAIT_SECONDS = INTERVAL_TIME * SECONDS_IN_MINUTE + UP_WAIT_SECONDS
 
+
+    next_up_timestamp = up_timestamp +  datetime.timedelta(minutes=5)
+    next_down_timestamp = next_up_timestamp + datetime.timedelta(minutes=5)
+
+    NEXT_PREFIX_NAME = 'A' + next_up_timestamp.strftime('%Y%m%d') + '.' + next_up_timestamp.strftime('%H%M')
+    NEXT_SUFFIX_NAME = next_down_timestamp.strftime('%H%M')
+
+    print "NEXT_FILE_NAME=%s" % (NEXT_PREFIX_NAME + '*' + '-' + NEXT_SUFFIX_NAME + '*')
     print "FILE_NAME=%s" % (PREFIX_NAME + '*' + '-' + SUFFIX_NAME + '*')
     print "CURRENT_TIMESTAMP=%s" % current_timestamp
     #print "SUFFIX_NAME=%s" % SUFFIX_NAME
