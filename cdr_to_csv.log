@@ -1,0 +1,103 @@
+2019-04-16 16:50:16 5seconds_sync.py [line:115] WARNING system_capacity=4000, nServers=10, load_per_seconds=10, formula_factor=2.0
+2019-04-16 16:50:17 5seconds_sync.py [line:150] CRITICAL start to make call[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:21 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:26 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:31 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:36 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:41 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:45 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:46 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:50 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:50:55 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 5]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 4]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 7]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 6]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 1]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 3]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 0]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 2]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:239] WARNING [instance: 8]: 5 seconds, start sync
+2019-04-16 16:51:00 5seconds_sync.py [line:182] CRITICAL sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 16:51:05 5seconds_sync.py [line:239] WARNING [instance: 9]: 5 seconds, start sync
+2019-04-16 16:51:05 5seconds_sync.py [line:168] WARNING system_usage=4135, system_capacity=4000, deviation=0.033750

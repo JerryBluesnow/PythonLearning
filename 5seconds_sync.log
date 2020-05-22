@@ -1,0 +1,36 @@
+2019-04-16 17:28:44 5seconds_sync.1.py [line:287] INFO +++++++++++++++++++++++++++++++START the Script++++++++++++++++++++++++++++++++
+2019-04-16 17:28:44 5seconds_sync.1.py [line:115] INFO system_capacity=4000, nServers=10, load_per_seconds=20, formula_factor=2.00
+2019-04-16 17:28:44 5seconds_sync.1.py [line:150] INFO start to make call[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 6]: local_usage=127, system_usage=1206, up_bound=715, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 2]: local_usage=135, system_usage=1206, up_bound=760, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 4]: local_usage=126, system_usage=1206, up_bound=709, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 0]: local_usage=107, system_usage=1206, up_bound=602, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 7]: local_usage=110, system_usage=1206, up_bound=619, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 3]: local_usage=1[instance: 8]: local_usage=122, system_usage=1206, up_b2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 8]: local_usage=122, system_usage=1206, up_bound=687, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 1]: local_usage=125, system_usage=1206, up_bound=704, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 9]: local_usage=111, system_usage=1206, up_bound=625, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:254] INFO [instance: 5]: local_usage=122, system_usage=1206, up_bound=687, offset=-0.698500
+2019-04-16 17:28:49 5seconds_sync.1.py [line:182] INFO sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 8]: local_usage=238, system_usage=2414, up_bound=550, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 0]: local_usage=214, system_usage=2414, up_bound=495, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 1]: local_usage=262, system_usage=2414, up_bound=606, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 4]: local_usage=252, system_usage=2414, up_bound=583, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 9]: local_usage=232, system_usage=2414, up_bound=536, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 5]: local_usage=241, system_usage=2414, up_bound=557, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 2]: local_usage=246, system_usage=2414, up_bound=569, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 6]: local_usage=249, system_usage=2414, up_bound=576, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 3]: local_usage=252, system_usage=2414, up_bound=583, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:254] INFO [instance: 7]: local_usage=228, system_usage=2414, up_bound=527, offset=-0.396500
+2019-04-16 17:28:54 5seconds_sync.1.py [line:182] INFO sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 3]: local_usage=362, system_usage=3610, up_bound=440, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 7]: local_usage=341, system_usage=3610, up_bound=414, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 6]: local_usage=366, system_usage=3610, up_bound=445, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 2]: local_usage=371, system_usage=3610, up_bound=451, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 1]: local_usage=366, system_usage=3610, up_bound=445, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 9]: local_usage=354, system_usage=3610, up_bound=430, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 5]: local_usage=369, system_usage=3610, up_bound=448, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 8]: local_usage=3[instance: 0]: local_usage=334, system_usage=3610, up_b2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 0]: local_usage=334, system_usage=3610, up_bound=406, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:254] INFO [instance: 4]: local_usage=368, system_usage=3610, up_bound=447, offset=-0.097500
+2019-04-16 17:28:59 5seconds_sync.1.py [line:182] INFO sync done! reset sync timer[+++++++++++++++++++++++++++++++++++++++++++]
+2019-04-16 17:29:03 5seconds_sync.1.py [line:168] WARNING system_usage=4403, system_capacity=4000, deviation=0.100750
+2019-04-16 17:29:03 5seconds_sync.1.py [line:289] INFO +++++++++++++++++++++++++++++++Quit From the Script++++++++++++++++++++++++++++
