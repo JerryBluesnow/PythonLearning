@@ -93,3 +93,53 @@ git rebase --skip 是高风险的操作，引起冲突的commits会被丢弃（�
     然后,执行git status，会得到中文名：
     deleted:    stock/stock2/stock/股票统计.xlsx
     之后执行git rm stock/stock2/stock/股票统计.xlsx就可以了
+
+
+
+jzhan107@lsslinux01.ih.lucent.com:/home_nbu/jzhan107/gitProject/sbc/ssp/ds/ims/ibcf>n$ git remote -v
+origin  https://gerrit.ext.net.nokia.com/gerrit/ENT/sbc (fetch)
+origin  https://gerrit.ext.net.nokia.com/gerrit/ENT/sbc (push
+
+
+git commit -m "SBC-1110: this the second change to IBCF_prov_data.cpp to add file comments"
+
+
+
+
+# amend 只能修改最近一次的commit 的comments
+git commit --amend 
+
+
+# 如果有commit没有加SBC-XXXXX
+git log # find commit id
+
+commit 9868180908cb0dcc485f75abd87987135002e0b7
+Author: jzhan107 <jerry.2.zhang@nokia-sbell.com>
+Date:   Wed Aug 28 21:26:46 2019 -0500
+
+    add comments to IBCF_prov_data.cpp
+
+    Change-Id: I165efc1eea2eb52eef139a9edd590682051fd20c
+
+# move commit to the head	
+git reset --soft 9868180908cb0dcc485f75abd87987135002e0b7  
+
+# fix the comments
+git commit --amend
+
+# still need to push to remote
+git push origin HEAD:refs/for/current_learning
+
+
+今天执行git pull时，碰到如下提示：
+
+First, rewinding head to replay your work on top of it...
+
+参考链接：https://stackoverflow.com/questions/22320058/git-first-rewinding-head-to-replay
+
+看到如下答案：
+
+git fetch origin; git reset --hard origin/<branch>
+ ———————————————— 
+版权声明：本文为CSDN博主「从心所愿」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/sanbingyutuoniao123/article/details/78187229
