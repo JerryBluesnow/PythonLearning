@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "2ExecuteMyAppDyc.py", line 88, in main
+    cW.setSize(sizemode)
+  File "2ExecuteMyAppDyc.py", line 24, in setSize
+    Minimize()
+NameError: name 'Minimize' is not defined

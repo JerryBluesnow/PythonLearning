@@ -106,3 +106,17 @@ http://www.python.org/ftp/python/2.7.6/python-2.7.6.msi
     ----> 
     def __init__(self, proxies={'http': 'xxx.xxx.xxx.xxx:xx'}):    
     其中xxx.xxx.xxx.xxx:xx具体的代理，在浏览器的代理中可以查到.
+
+## Python程序打包成exe
+
++ [Python3.x：打包为exe执行文件（window系统）](https://www.cnblogs.com/lizm166/p/8315468.html)
++ [pyinstaller打包单个exe后无法执行错误的解决方法](https://www.jb51.net/article/163664.htm)
+
+## python 代码模板
+
++ [Codeing Dict](http://codingdict.com/sources/py/win32process/20280.html)
+
+## python pywin32
+
++ [Python win32gui调用窗口到最前面](https://www.cnblogs.com/zhizhao/p/11489691.html)
+

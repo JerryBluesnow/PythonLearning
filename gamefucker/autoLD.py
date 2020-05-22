@@ -8,6 +8,8 @@ from pywinauto import application
 # 读写注册表模块
 import _winreg
 
+import os
+
 # 配置参数
 pyautogui.PAUSE = 1.5
 pyautogui.FAILSAFE = True
@@ -62,6 +64,7 @@ if __name__ == '__main__':
     #pyautogui.screenshot(region=(20, 20, 50, 50))
 
     #sys.exit(0)
+    working_path = os.path.abspath('.')
 
     selectAllButton = None
     while selectAllButton is None:
